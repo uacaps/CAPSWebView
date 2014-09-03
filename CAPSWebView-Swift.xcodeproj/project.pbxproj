@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9ED9C33119B644CD00DCFCC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9C33019B644CD00DCFCC3 /* AppDelegate.swift */; };
+		9ED9C33319B644CD00DCFCC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED9C33219B644CD00DCFCC3 /* Images.xcassets */; };
+		9ED9C33F19B644CD00DCFCC3 /* CAPSWebView_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9C33E19B644CD00DCFCC3 /* CAPSWebView_SwiftTests.swift */; };
+		9ED9C35019B662C200DCFCC3 /* CAPSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED9C34E19B662C200DCFCC3 /* CAPSWebView.swift */; };
+		9ED9C35619B7560900DCFCC3 /* Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED9C35219B7560900DCFCC3 /* Next.png */; };
+		9ED9C35719B7560900DCFCC3 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED9C35319B7560900DCFCC3 /* Next@2x.png */; };
+		9ED9C35819B7560900DCFCC3 /* Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED9C35419B7560900DCFCC3 /* Previous.png */; };
+		9ED9C35919B7560900DCFCC3 /* Previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED9C35519B7560900DCFCC3 /* Previous@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9ED9C33919B644CD00DCFCC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ED9C32319B644CD00DCFCC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ED9C32A19B644CD00DCFCC3;
+			remoteInfo = "CAPSWebView-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9ED9C32B19B644CD00DCFCC3 /* CAPSWebView-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CAPSWebView-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED9C32F19B644CD00DCFCC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ED9C33019B644CD00DCFCC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9ED9C33219B644CD00DCFCC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9ED9C33819B644CD00DCFCC3 /* CAPSWebView-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CAPSWebView-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED9C33D19B644CD00DCFCC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ED9C33E19B644CD00DCFCC3 /* CAPSWebView_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAPSWebView_SwiftTests.swift; sourceTree = "<group>"; };
+		9ED9C34E19B662C200DCFCC3 /* CAPSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSWebView.swift; sourceTree = "<group>"; };
+		9ED9C35219B7560900DCFCC3 /* Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Next.png; sourceTree = "<group>"; };
+		9ED9C35319B7560900DCFCC3 /* Next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next@2x.png"; sourceTree = "<group>"; };
+		9ED9C35419B7560900DCFCC3 /* Previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Previous.png; sourceTree = "<group>"; };
+		9ED9C35519B7560900DCFCC3 /* Previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Previous@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9ED9C32819B644CD00DCFCC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ED9C33519B644CD00DCFCC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9ED9C32219B644CD00DCFCC3 = {
+			isa = PBXGroup;
+			children = (
+				9ED9C32D19B644CD00DCFCC3 /* CAPSWebView-Swift */,
+				9ED9C33B19B644CD00DCFCC3 /* CAPSWebView-SwiftTests */,
+				9ED9C32C19B644CD00DCFCC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9ED9C32C19B644CD00DCFCC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9ED9C32B19B644CD00DCFCC3 /* CAPSWebView-Swift.app */,
+				9ED9C33819B644CD00DCFCC3 /* CAPSWebView-SwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9ED9C32D19B644CD00DCFCC3 /* CAPSWebView-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				9ED9C33019B644CD00DCFCC3 /* AppDelegate.swift */,
+				9ED9C33219B644CD00DCFCC3 /* Images.xcassets */,
+				9ED9C32E19B644CD00DCFCC3 /* Supporting Files */,
+				9ED9C34E19B662C200DCFCC3 /* CAPSWebView.swift */,
+				9ED9C35219B7560900DCFCC3 /* Next.png */,
+				9ED9C35319B7560900DCFCC3 /* Next@2x.png */,
+				9ED9C35419B7560900DCFCC3 /* Previous.png */,
+				9ED9C35519B7560900DCFCC3 /* Previous@2x.png */,
+			);
+			path = "CAPSWebView-Swift";
+			sourceTree = "<group>";
+		};
+		9ED9C32E19B644CD00DCFCC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9ED9C32F19B644CD00DCFCC3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9ED9C33B19B644CD00DCFCC3 /* CAPSWebView-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				9ED9C33E19B644CD00DCFCC3 /* CAPSWebView_SwiftTests.swift */,
+				9ED9C33C19B644CD00DCFCC3 /* Supporting Files */,
+			);
+			path = "CAPSWebView-SwiftTests";
+			sourceTree = "<group>";
+		};
+		9ED9C33C19B644CD00DCFCC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9ED9C33D19B644CD00DCFCC3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9ED9C32A19B644CD00DCFCC3 /* CAPSWebView-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ED9C34219B644CD00DCFCC3 /* Build configuration list for PBXNativeTarget "CAPSWebView-Swift" */;
+			buildPhases = (
+				9ED9C32719B644CD00DCFCC3 /* Sources */,
+				9ED9C32819B644CD00DCFCC3 /* Frameworks */,
+				9ED9C32919B644CD00DCFCC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CAPSWebView-Swift";
+			productName = "CAPSWebView-Swift";
+			productReference = 9ED9C32B19B644CD00DCFCC3 /* CAPSWebView-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9ED9C33719B644CD00DCFCC3 /* CAPSWebView-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ED9C34519B644CD00DCFCC3 /* Build configuration list for PBXNativeTarget "CAPSWebView-SwiftTests" */;
+			buildPhases = (
+				9ED9C33419B644CD00DCFCC3 /* Sources */,
+				9ED9C33519B644CD00DCFCC3 /* Frameworks */,
+				9ED9C33619B644CD00DCFCC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9ED9C33A19B644CD00DCFCC3 /* PBXTargetDependency */,
+			);
+			name = "CAPSWebView-SwiftTests";
+			productName = "CAPSWebView-SwiftTests";
+			productReference = 9ED9C33819B644CD00DCFCC3 /* CAPSWebView-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9ED9C32319B644CD00DCFCC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Niklas Fahl";
+				TargetAttributes = {
+					9ED9C32A19B644CD00DCFCC3 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					9ED9C33719B644CD00DCFCC3 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 9ED9C32A19B644CD00DCFCC3;
+					};
+				};
+			};
+			buildConfigurationList = 9ED9C32619B644CD00DCFCC3 /* Build configuration list for PBXProject "CAPSWebView-Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9ED9C32219B644CD00DCFCC3;
+			productRefGroup = 9ED9C32C19B644CD00DCFCC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9ED9C32A19B644CD00DCFCC3 /* CAPSWebView-Swift */,
+				9ED9C33719B644CD00DCFCC3 /* CAPSWebView-SwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9ED9C32919B644CD00DCFCC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ED9C35819B7560900DCFCC3 /* Previous.png in Resources */,
+				9ED9C35619B7560900DCFCC3 /* Next.png in Resources */,
+				9ED9C35719B7560900DCFCC3 /* Next@2x.png in Resources */,
+				9ED9C33319B644CD00DCFCC3 /* Images.xcassets in Resources */,
+				9ED9C35919B7560900DCFCC3 /* Previous@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ED9C33619B644CD00DCFCC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9ED9C32719B644CD00DCFCC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ED9C35019B662C200DCFCC3 /* CAPSWebView.swift in Sources */,
+				9ED9C33119B644CD00DCFCC3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ED9C33419B644CD00DCFCC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ED9C33F19B644CD00DCFCC3 /* CAPSWebView_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9ED9C33A19B644CD00DCFCC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9ED9C32A19B644CD00DCFCC3 /* CAPSWebView-Swift */;
+			targetProxy = 9ED9C33919B644CD00DCFCC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9ED9C34019B644CD00DCFCC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9ED9C34119B644CD00DCFCC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9ED9C34319B644CD00DCFCC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "CAPSWebView-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9ED9C34419B644CD00DCFCC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "CAPSWebView-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9ED9C34619B644CD00DCFCC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CAPSWebView-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CAPSWebView-Swift.app/CAPSWebView-Swift";
+			};
+			name = Debug;
+		};
+		9ED9C34719B644CD00DCFCC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CAPSWebView-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CAPSWebView-Swift.app/CAPSWebView-Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9ED9C32619B644CD00DCFCC3 /* Build configuration list for PBXProject "CAPSWebView-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ED9C34019B644CD00DCFCC3 /* Debug */,
+				9ED9C34119B644CD00DCFCC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ED9C34219B644CD00DCFCC3 /* Build configuration list for PBXNativeTarget "CAPSWebView-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ED9C34319B644CD00DCFCC3 /* Debug */,
+				9ED9C34419B644CD00DCFCC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9ED9C34519B644CD00DCFCC3 /* Build configuration list for PBXNativeTarget "CAPSWebView-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ED9C34619B644CD00DCFCC3 /* Debug */,
+				9ED9C34719B644CD00DCFCC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9ED9C32319B644CD00DCFCC3 /* Project object */;
+}
