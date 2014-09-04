@@ -15,8 +15,6 @@ All the classes required for CAPSWebView are located in the CAPSWebView folder i
 
 * <code>CAPSWebView.swift</code>
 
-```
-
 ## Future Work
 
 * Coming soon
