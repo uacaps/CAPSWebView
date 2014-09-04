@@ -19,10 +19,17 @@ All the classes and images required for CAPSWebView are located in the CAPSWebVi
 * <code>Previous.png<code>
 * <code>Previous@2x.png<code>
 
+## How to use CAPSWebView
+
+In order to use CAPSWebView you should either use the existing navigation controller of your app if your app utilizes one or create a new navigation controller. After that you should push CAPSWebView to the navigation controller. An example of pushing CAPSWebView can be found below.
+
+<code>self.testNavigationController!.pushViewController(CAPSWebView(url: "google.com", primary: nil, secondary: UIColor.grayColor()), animated: false)<code>
+
 ## Future Work
 
 * Objective-C version
 * Support for iOS 7 and below by use of UIWebView
+* etc.
 
 ## License ##
 
