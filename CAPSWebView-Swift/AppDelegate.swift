@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.testNavigationController = UINavigationController()
-        self.testNavigationController!.pushViewController(CAPSWebView(), animated: false)
+        self.testNavigationController!.pushViewController(CAPSWebView(url: "google.com", primary: nil, secondary: UIColor.grayColor()), animated: false)
         self.testNavigationController?.navigationBar.translucent = true
         self.window?.rootViewController = self.testNavigationController
         self.window!.backgroundColor = UIColor.whiteColor()

@@ -28,6 +28,9 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
     
     var toolbarVisibleHeight: CGFloat?
     
+    var primaryColor: UIColor?
+    var secondaryColor: UIColor?
+    
     override init()
     {
         urlString = NSString()
@@ -43,7 +46,32 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         
         super.init()
         
-        urlString = url
+        urlString = validateUrl(url)
+    }
+    
+    init(url: NSString, primary: UIColor?, secondary: UIColor)
+    {
+        urlString = NSString()
+        
+        super.init()
+        
+        urlString = validateUrl(url)
+        
+        primaryColor = primary
+        secondaryColor = secondary
+    }
+    
+    func validateUrl(url: NSString) -> NSString
+    {
+        let httpSubstring = url as NSString
+        httpSubstring.substringWithRange(NSRange(location: 0,length: 3))
+        
+        // Do more validation for correct url input
+        if (httpSubstring != "http") {
+            return "https://\(url)"
+        } else {
+            return url
+        }
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
@@ -65,10 +93,8 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         self.webView?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
         self.webView?.sizeToFit()
         self.containerView = self.webView!
-
         self.view.addSubview(self.containerView!)
         
-        //self.view = self.webView!
         self.webView?.navigationDelegate = self
         self.webView?.scrollView.delegate = self
         self.webView?.sizeToFit()
@@ -94,12 +120,31 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         toolbar = UIToolbar(frame: CGRectMake(0, self.view.bounds.height - 44.0, 320, 44))
         toolbar!.items = [backButton!, fixedSpace, forwardButton!, flexibleSpace, actionButton, fixedSpace, reloadButton]
         self.view.addSubview(toolbar!)
+        
+        // Set autoresizing masks
+        self.webView?.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.containerView?.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.toolbar?.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        progressBar?.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        
+        // Set colors
+        if (secondaryColor != nil) {
+            setUIColors(primaryColor, secondary: secondaryColor!)
+        }
+        
+        self.title = urlString
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return UIInterfaceOrientation.Portrait
+    }
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         // add observer for estimated progress
         self.webView?.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions.New, context: nil)
         
@@ -159,6 +204,8 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
     {
         progressBar?.alpha = 1.0
         
+        self.title = "\(self.webView!.URL)"
+        
         startLoading()
     }
     
@@ -217,6 +264,19 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         UIApplication.sharedApplication().openURL(url)
     }
     
+    func setUIColors(primary: UIColor?, secondary: UIColor)
+    {
+        self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(object:secondary, forKey:NSForegroundColorAttributeName)
+        
+        if (primary != nil) {
+            self.navigationController!.navigationBar.barTintColor = primary
+            self.toolbar?.barTintColor = primary
+        }
+        
+        self.navigationController!.navigationBar.tintColor = secondary
+        self.toolbar?.tintColor = secondary
+    }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         var offset : CGPoint = scrollView.contentOffset;
         var bounds : CGRect = scrollView.bounds;
@@ -233,19 +293,26 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         toolbarVisibleHeight = self.view.frame.height - self.toolbar!.frame.origin.y;
         println("toolbar visible \(toolbarVisibleHeight)px")
         
-        if (currentScrollOffset!.y > -64.0) {
+        var offsetCutoff : CGFloat = -64.0
+        
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft || UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
+            offsetCutoff = -32.0
+        }
+        
+        if (currentScrollOffset!.y > offsetCutoff) {
             if (h > 0) {
                 if (y >= h) {
-                    if (self.toolbar!.frame.origin.y > self.view.bounds.size.height - 44.0) {
-                        if (self.toolbar!.frame.origin.y - deltaY > self.view.frame.height - 44.0) {
-                            self.toolbar?.frame = CGRectMake(0, self.toolbar!.frame.origin.y - deltaY, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
-                        } else {
-                            self.toolbar?.frame = CGRectMake(0, self.view.bounds.size.height - 44.0, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
-                        }
-//                        self.webView?.frame = CGRectMake(self.webView!.frame.origin.x, self.webView!.frame.origin.y, self.webView!.frame.size.width, self.webView!.frame.height - toolbarVisibleHeight)
-//                        self.webView?.scrollView.contentSize = CGSizeMake(self.webView!.frame.size.width, self.webView!.frame.height - toolbarVisibleHeight)
-                    }
-                    println("scrolling past bounds toolbar opening")
+                    // ***Code to fade in toolbar when scrolling past bounds on bottom. Problems with webview resizing prevent me from using this 'feature' at this time***
+                    
+//                    if (self.toolbar!.frame.origin.y > self.view.bounds.size.height - 44.0) {
+//                        if (self.toolbar!.frame.origin.y - deltaY > self.view.frame.height - 44.0) {
+//                            self.toolbar?.frame = CGRectMake(0, self.toolbar!.frame.origin.y - deltaY, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
+//                        } else {
+//                            self.toolbar?.frame = CGRectMake(0, self.view.bounds.size.height - 44.0, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
+//                        }
+//                    }
+//                    
+//                    println("scrolling past bottom bounds toolbar opening")
                 } else {
                     if (y >= 0 && y < h) {
                         if (deltaY >= 0) {
