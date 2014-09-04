@@ -29,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		9ED9C32B19B644CD00DCFCC3 /* CAPSWebView-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CAPSWebView-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ED9C32F19B644CD00DCFCC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ED9C33019B644CD00DCFCC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ED9C33219B644CD00DCFCC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9ED9C33819B644CD00DCFCC3 /* CAPSWebView-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CAPSWebView-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,9 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				9ED9C33019B644CD00DCFCC3 /* AppDelegate.swift */,
+				9ED9C34E19B662C200DCFCC3 /* CAPSWebView.swift */,
 				9ED9C33219B644CD00DCFCC3 /* Images.xcassets */,
 				9ED9C32E19B644CD00DCFCC3 /* Supporting Files */,
-				9ED9C34E19B662C200DCFCC3 /* CAPSWebView.swift */,
 				9ED9C35219B7560900DCFCC3 /* Next.png */,
 				9ED9C35319B7560900DCFCC3 /* Next@2x.png */,
 				9ED9C35419B7560900DCFCC3 /* Previous.png */,
@@ -96,7 +95,6 @@
 		9ED9C32E19B644CD00DCFCC3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9ED9C32F19B644CD00DCFCC3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -399,6 +397,7 @@
 				9ED9C34419B644CD00DCFCC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9ED9C34519B644CD00DCFCC3 /* Build configuration list for PBXNativeTarget "CAPSWebView-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +406,7 @@
 				9ED9C34719B644CD00DCFCC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
