@@ -1,7 +1,7 @@
 CAPSWebView (PRE-RELEASE)
 =========================
 
-A web page viewer utilizing the new WKWebView for iOS 8
+A web page viewer utilizing the new WKWebView for iOS 8 written in Swift
 
 ## Installation
 
@@ -21,7 +21,8 @@ All the classes and images required for CAPSWebView are located in the CAPSWebVi
 
 ## Future Work
 
-* Coming soon
+* Objective-C version
+* Support for iOS 7 and below by use of UIWebView
 
 ## License ##
 
