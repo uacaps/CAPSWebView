@@ -24,6 +24,38 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
     
     var toolbar: UIToolbar?
     
+    var urlString: NSString?
+    
+    var toolbarVisibleHeight: CGFloat?
+    
+    override init()
+    {
+        urlString = NSString()
+        
+        super.init()
+        
+        urlString = "http://www.google.com"
+    }
+    
+    init(url: NSString)
+    {
+        urlString = NSString()
+        
+        super.init()
+        
+        urlString = url
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+    }
+    
     override func loadView()
     {
         super.loadView()
@@ -57,7 +89,7 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         forwardButton!.enabled = false
         
         var flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
-        var actionButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: nil)
+        var actionButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "openActionSheet")
         
         toolbar = UIToolbar(frame: CGRectMake(0, self.view.bounds.height - 44.0, 320, 44))
         toolbar!.items = [backButton!, fixedSpace, forwardButton!, flexibleSpace, actionButton, fixedSpace, reloadButton]
@@ -71,7 +103,7 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         // add observer for estimated progress
         self.webView?.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions.New, context: nil)
         
-        var url = NSURL(string:"http://google.com")
+        var url = NSURL(string:urlString!)
         var req = NSURLRequest(URL:url)
         self.webView!.loadRequest(req)
     }
@@ -150,16 +182,6 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         println("content height \(self.webView?.scrollView.contentSize.height)")
     }
     
-    @IBAction func didSelectBackButton(sender: AnyObject)
-    {
-        self.webView?.goBack()
-    }
-    
-    @IBAction func didSelectForwardButton(sender: AnyObject)
-    {
-        self.webView?.goForward()
-    }
-    
     func reloadPage()
     {
         var url = self.webView?.URL
@@ -177,6 +199,24 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         self.webView?.goForward()
     }
     
+    func openActionSheet()
+    {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Open in Safari", style: UIAlertActionStyle.Default) { action in
+            self.openUrlInSafari(self.webView!.URL)
+        })
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    func openUrlInSafari(url: NSURL)
+    {
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         var offset : CGPoint = scrollView.contentOffset;
         var bounds : CGRect = scrollView.bounds;
@@ -190,15 +230,20 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
         
         var deltaY = currentScrollOffset!.y - lastOffset.y
         
+        toolbarVisibleHeight = self.view.frame.height - self.toolbar!.frame.origin.y;
+        println("toolbar visible \(toolbarVisibleHeight)px")
+        
         if (currentScrollOffset!.y > -64.0) {
             if (h > 0) {
-                if (y > h) {
+                if (y >= h) {
                     if (self.toolbar!.frame.origin.y > self.view.bounds.size.height - 44.0) {
                         if (self.toolbar!.frame.origin.y - deltaY > self.view.frame.height - 44.0) {
                             self.toolbar?.frame = CGRectMake(0, self.toolbar!.frame.origin.y - deltaY, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
                         } else {
                             self.toolbar?.frame = CGRectMake(0, self.view.bounds.size.height - 44.0, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
                         }
+//                        self.webView?.frame = CGRectMake(self.webView!.frame.origin.x, self.webView!.frame.origin.y, self.webView!.frame.size.width, self.webView!.frame.height - toolbarVisibleHeight)
+//                        self.webView?.scrollView.contentSize = CGSizeMake(self.webView!.frame.size.width, self.webView!.frame.height - toolbarVisibleHeight)
                     }
                     println("scrolling past bounds toolbar opening")
                 } else {
@@ -227,6 +272,22 @@ class CAPSWebView: UIViewController, WKNavigationDelegate, UIScrollViewDelegate
             }
         } else {
             self.toolbar?.frame = CGRectMake(0, self.view.bounds.size.height - 44.0, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
+        }
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        println("ended scroll")
+        
+        var interval : NSTimeInterval = 0.2
+        
+        if (toolbarVisibleHeight > 22.0) { // fully open toolbar
+            UIView.animateWithDuration(0.2, animations: {
+                self.toolbar!.frame = CGRectMake(0, self.view.bounds.size.height - 44.0, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
+            })
+        } else { // fully close toolbar
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.toolbar!.frame = CGRectMake(0, self.view.frame.height, self.toolbar!.frame.size.width, self.toolbar!.frame.size.height)
+            })
         }
     }
 }
