@@ -11,7 +11,7 @@ Coming in the future.
 
 **Manual Installation**
 
-All the classes required for CAPSWebView are located in the CAPSWebView folder in the root of this repository. They are listed below:
+All the classes and images required for CAPSWebView are located in the CAPSWebView folder in the root of this repository. They are listed below:
 
 * <code>CAPSWebView.swift</code>
 
