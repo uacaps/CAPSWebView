@@ -14,6 +14,10 @@ Coming in the future.
 All the classes and images required for CAPSWebView are located in the CAPSWebView folder in the root of this repository. They are listed below:
 
 * <code>CAPSWebView.swift</code>
+* <code>Next.png</code>
+* <code>Next@2x.png</code>
+* <code>Previous.png</code>
+* <code>Previous@2x.png</code>
 
 ## Future Work
 
