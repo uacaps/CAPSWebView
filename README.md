@@ -1,7 +1,7 @@
 CAPSWebView (PRE-RELEASE)
 =========================
 
-A web page viewer utilizing the new WKWebView for iOS 8
+A web page viewer utilizing the new WKWebView for iOS 8 written in Swift
 
 ## Installation
 
@@ -11,13 +11,29 @@ Coming in the future.
 
 **Manual Installation**
 
-All the classes required for CAPSWebView are located in the CAPSWebView folder in the root of this repository. They are listed below:
+All the classes and images required for CAPSWebView are located in the CAPSWebView folder in the root of this repository. They are listed below:
 
-* <code>CAPSWebView.swift</code>
+* <code>CAPSWebView.swift<code>
+* <code>Next.png<code>
+* <code>Next@2x.png<code>
+* <code>Previous.png<code>
+* <code>Previous@2x.png<code>
+
+## How to use CAPSWebView
+
+In order to use CAPSWebView you should either use the existing navigation controller of your app if your app utilizes one or create a new navigation controller. After that you should push CAPSWebView to the navigation controller. An example of pushing CAPSWebView can be found below.
+
+```objective-c
+// Push CAPSWebView initializing just secondary color and url
+self.testNavigationController!.pushViewController(CAPSWebView(url: "google.com", primary: nil, secondary: UIColor.grayColor()), animated: false)
+```
+
 
 ## Future Work
 
-* Coming soon
+* Objective-C version
+* Support for iOS 7 and below by use of UIWebView
+* etc.
 
 ## License ##
 
